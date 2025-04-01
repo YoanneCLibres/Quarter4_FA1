@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support House of Hope Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="C:\Users\Yoanne Libres\Downloads\Quarter4_FA1\image\logo.png" alt="House of Hope Logo" class="logo">
+
+        <h1>Support House of Hope Foundation</h1>
+    </header>
+    <div class="container">
+        <p>
+            House of Hope Foundation for Kids with Cancer Inc. in Davao provides crucial support to children battling cancer.
+            Here’s why you should support us:
+        </p>
+        <p class="description">
+            We provide medical assistance to children with cancer. We also offer emotional and psychological support for families. 
+            We always ensure a better future for children through care and treatment.
+        </p>
+
+        <h2>Sign Up to Support</h2>
+        <form id="signupForm">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+            
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+            
+            <label>Sex:</label>
+            <input type="radio" name="sex" value="male" required> Male
+            <input type="radio" name="sex" value="female"> Female
+            <input type="radio" name="sex" value="prefer_not_say"> Prefer not to say
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact">
+            
+            <p class="error" id="errorMessage">All required fields must be filled!</p>
+            
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            var fname = document.getElementById("fname").value.trim();
+            var lname = document.getElementById("lname").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var sex = document.querySelector('input[name="sex"]:checked');
+            
+            if (fname === "" || lname === "" || email === "" || !sex) {
+                document.getElementById("errorMessage").style.display = "block";
+                event.preventDefault();
+            } else {
+                document.getElementById("errorMessage").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
